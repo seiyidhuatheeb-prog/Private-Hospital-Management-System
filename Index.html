@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Home - Private Hospital Management System</title>
+  <link rel="Stylesheet" href="Index.css">
+</head>
+<body>
+  <!-- ---------- HEADER ---------- -->
+  <header class="main-header">
+    <div class="container header-box">
+     <div class="logo">PHMS</div>
+      <nav class="nav">
+        <a href="Index.html" class="active">Home</a>
+        <a href="About.html">About</a>
+        <a href="Services.html">Services</a>
+        <a href="Doctors.html">Doctors</a>
+        <a href="Appointments.html">Appointments</a>
+        <a href="Contact.html">Contact</a>
+        <a href="Login.html" class="login-btn">Login</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <!-- ---------- HERO SECTION ---------- -->
+    <section class="hero-section">
+      <h1>Welcome to Private Hospital Management System</h1>
+      <p>Comprehensive patient care, online appointments, billing and admin dashboard — starter hospital management template.</p>
+      <a class="hero-btn" href="Appointments.html">Book an Appointment</a>
+    </section>
+    <!-- ---------- SERVICES ---------- -->
+    <section class="services-grid">
+      <div class="service-card">
+        <h3>Outpatient Services</h3>
+        <p>OPD, lab tests, consultations and imaging with fast reports.</p>
+      </div>
+      <div class="service-card">
+        <h3>Inpatient Care</h3>
+        <p>Modern patient rooms, trained nursing staff and ICU support.</p>
+      </div>
+      <div class="service-card">
+        <h3>Emergency</h3>
+        <p>24/7 emergency treatment with ambulance and trauma care.</p>
+      </div>
+      <div class="service-card">
+        <h3>Pharmacy</h3>
+        <p>On-site pharmacy for prescription and medication needs.</p>
+      </div>
+      
+      
+    </section>
+  </main>
+  
+  <footer class="footer">
+  © Private Hospital Management System — Created By 
+  <strong>SMS.Atheeb Moulana</strong>
+</footer>
+
+  <!-- ---------- JAVASCRIPT ANIMATIONS ---------- -->
+  <script>
+    // PAGE LOAD
+    window.onload = () => {
+      document.body.classList.add("loaded");
+      document.querySelector(".main-header").classList.add("show");
+      document.querySelector(".hero-section").classList.add("show");
+
+      setTimeout(() => {
+        document.querySelector(".footer").classList.add("show");
+      }, 500);
+    };
+
+    // OBSERVE SERVICE CARDS
+    const cards = document.querySelectorAll(".service-card");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observer.observe(card));
+  </script>
+  
+</body>
+</html>

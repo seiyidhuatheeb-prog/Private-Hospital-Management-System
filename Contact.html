@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Contact - Private Hospital Management System</title>
+<link rel="Stylesheet" href="Contact.css">
+</head>
+<body>
+<header class="main-header">
+  <div class="container header-box">
+    <div class="logo">PHMS</div>
+    <nav class="nav">
+      <a href="Index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Services.html">Services</a>
+      <a href="Doctors.html">Doctors</a>
+      <a href="Appointments.html">Appointments</a>
+      <a href="Contact.html" class="active">Contact</a>
+      <a href="Login.html" class="login-btn">Login</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <div class="appointment-container">
+    <h2>Contact Us</h2>
+    <p>
+      Address: 123 Medical Road, Colombo<br>
+      Phone: +94 77 123 4567
+    </p>
+    <form action="Contact Successfull.html">
+      <input type="text" placeholder="Your name">
+      <input type="email" placeholder="Your email">
+      <textarea rows="4" placeholder="Write your message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</main>
+<footer class="footer">© Private Hospital Management System — Created By <strong>SMS.Atheeb Moulana</strong></footer>
+
+<script>
+window.onload = () => {
+  document.body.classList.add("loaded");
+  document.querySelector(".main-header").classList.add("show");
+  document.querySelector(".appointment-container").classList.add("show");
+};
+</script>
+</body>
+</html>

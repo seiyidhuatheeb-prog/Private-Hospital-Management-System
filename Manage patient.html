@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Admin - Manage Patients</title>
+<link rel="Stylesheet"href="Manage patient.css">
+
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <strong style="font-size:20px">PHMS Admin</strong>
+    <nav style="float:right">
+      <a href="Admin.html">Dashboard</a>
+      <a href="Manage Appointment.html">Appointments</a>
+      <a href="Manage patient.html">Patients</a>
+      <a href="Report.html">Reports</a>
+      <a href="Logout.html">Logout</a>
+    </nav>
+    <div style="clear:both"></div>
+  </div>
+</header>
+
+<main class="container">
+<div class="card">
+<h2>Manage Patients</h2>
+
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Patient Name</th>
+<th>Age</th>
+<th>Contact</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>Mohamed Ali</td>
+<td>32</td>
+<td>0771234567</td>
+<td><span class="status active">Active</span></td>
+<td>
+<button class="btn view" onclick="viewPatient(this)">View</button>
+<button class="btn toggle" onclick="toggleStatus(this)">Deactivate</button>
+<button class="btn delete" onclick="deleteRow(this)">Delete</button>
+</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Leonel Messi</td>
+<td>27</td>
+<td>0769988776</td>
+<td><span class="status inactive">Inactive</span></td>
+<td>
+<button class="btn view" onclick="viewPatient(this)">View</button>
+<button class="btn toggle" onclick="toggleStatus(this)">Activate</button>
+<button class="btn delete" onclick="deleteRow(this)">Delete</button>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</main>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3>Patient Details</h3>
+    <p id="modalData"></p>
+  </div>
+</div>
+
+<footer class="footer">
+© Private Hospital Management System — Created By <strong>SMS.Atheeb Moulana</strong>
+</footer>
+
+<script>
+function viewPatient(btn){
+  const row = btn.closest("tr").children;
+  document.getElementById("modalData").innerHTML =
+    `<strong>Name:</strong> ${row[1].innerText}<br>
+     <strong>Age:</strong> ${row[2].innerText}<br>
+     <strong>Contact:</strong> ${row[3].innerText}<br>
+     <strong>Status:</strong> ${row[4].innerText}`;
+  document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+
+function toggleStatus(btn){
+  const row = btn.closest("tr");
+  const badge = row.querySelector(".status");
+
+  if(badge.classList.contains("active")){
+    badge.className="status inactive";
+    badge.innerText="Inactive";
+    btn.innerText="Activate";
+  }else{
+    badge.className="status active";
+    badge.innerText="Active";
+    btn.innerText="Deactivate";
+  }
+}
+
+function deleteRow(btn){
+  if(confirm("Delete this patient record?")){
+    btn.closest("tr").style.animation="fadeIn .4s reverse";
+    setTimeout(()=>btn.closest("tr").remove(),300);
+  }
+}
+</script>
+
+</body>
+</html>

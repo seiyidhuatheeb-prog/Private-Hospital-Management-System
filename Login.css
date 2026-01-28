@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: url('images/WhatsApp\ Image\ 2025-10-23\ at\ 11.58.25_c5d7cdfa.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* ---------- Header ---------- */
+.topbar {
+  background: #0059d4;
+  padding: 18px 5%;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.topbar .brand {
+  font-size: 22px;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* ---------- Center Container ---------- */
+.center-box {
+  flex:1;
+  display: flex;
+  justify-content: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+/* ---------- Glass Card ---------- */
+.glass-card {
+  width: 380px;
+  padding: 40px 36px;
+  background: rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 21px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 38px rgba(0,0,0,0.18);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.glass-card h2 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 28px;
+  font-weight: 700;
+}
+
+/* ---------- Input Fields ---------- */
+.glass-card input {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0 20px 0;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.35);
+  font-size: 15px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.glass-card input:focus {
+  background: rgba(255,255,255,0.55);
+  border-color: #0073ff;
+  box-shadow: 0 0 10px rgba(0,119,255,0.25);
+  outline: none;
+}
+
+/* ---------- Button ---------- */
+.btn {
+  width: 100%;
+  padding: 14px;
+  background: #006aff;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  background: #0052c7;
+}
+
+/* ---------- Small Links ---------- */
+.small {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.small a {
+  color: #0047c6;
+  font-weight: 600;
+}
+
+/* ---------- Footer (UPDATED) ---------- */
+.footer {
+  background: #0059d4;
+  color: #ffffff;
+  text-align: center;
+  padding: 18px;
+  font-size: 14px;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+}
+.footer strong{
+  color:#fff;
+}

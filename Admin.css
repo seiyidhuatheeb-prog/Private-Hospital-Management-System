@@ -1,0 +1,108 @@
+/* ---- Global Styles ---- */
+body {
+  background: url('images/istockphoto-2185872870-612x612.jpg');
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f7fb;
+  color: #333;
+}
+
+/* Sticky footer layout */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* ---- Container ---- */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ---- Header ---- */
+header {
+  background: #005eb8;
+  padding: 18px 0;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header strong {
+  color: #fff;
+}
+
+/* Navigation */
+nav a {
+  color: #e8efff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.7);
+}
+
+/* ---- Card ---- */
+.card {
+  background: white;
+  padding: 30px;
+  margin: 30px auto;
+  border-radius: 14px;
+  max-width: 1000px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  animation: fadeIn 0.5s ease;
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #005eb8;
+  font-size: 26px;
+}
+
+/* Admin dashboard - list styles */
+.card ul {
+  padding-left: 20px;
+}
+
+.card ul li {
+  margin-bottom: 12px;
+  font-size: 17px;
+}
+
+.card ul li a {
+  color: #005eb8;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.card ul li a:hover {
+  color: #003f80;
+  text-decoration: underline;
+}
+
+/* ---- Footer ---- */
+.footer {
+  background: #003366;
+  color: #c9d6ef;
+  padding: 14px 0;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+}
+
+/* ---- Animation ---- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}

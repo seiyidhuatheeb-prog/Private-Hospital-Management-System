@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Doctors - Private Hospital Management System</title>
+<link rel="Stylesheet" href="Doctors.css">
+</head>
+<body>
+<header class="main-header">
+  <div class="container header-box">
+    <div class="logo">PHMS</div>
+    <nav class="nav">
+      <a href="Index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Services.html">Services</a>
+      <a href="Doctors.html" class="active">Doctors</a>
+      <a href="Appointments.html">Appointments</a>
+      <a href="Contact.html">Contact</a>
+      <a href="Login.html" class="login-btn">Login</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <div class="hero-card">
+    <h2>Our Expert Doctors</h2>
+    <p>Meet our highly qualified team of doctors, specialists, and consultants committed to patient care.</p>
+  </div>
+
+  <div class="doctors-grid">
+    <div class="doctor-card">
+      <img src="images/atheeb moulana.jpg" alt="Dr. SMS.ATHEEB MOULANA">
+      <h3>Dr. SMS.ATHEEB MOULANA</h3>
+      <p>Consultant — Cardiology</p>
+    </div>
+    <div class="doctor-card">
+      <img src="images/Farhan.jpg" alt="Dr. MFM.FARHAN">
+      <h3>Dr. MFM.FARHAN</h3>
+      <p>Consultant — Pediatrics</p>
+    </div>
+    <div class="doctor-card">
+      <img src="images/asnaf.jpg" alt="Dr. M.ASNAF">
+      <h3>Dr. M.ASNAF</h3>
+      <p>General — Surgery</p>
+    </div>
+  </div>
+</main>
+<footer class="footer">© Private Hospital Management System — Created By <strong>SMS.Atheeb Moulana</strong></footer>
+<script>
+window.onload = () => {
+  document.body.classList.add("loaded");
+  document.querySelector(".main-header").classList.add("show");
+  document.querySelector(".hero-card").classList.add("show");
+};
+
+// Scroll animations for doctor cards
+const doctorCards = document.querySelectorAll(".doctor-card");
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.2 });
+doctorCards.forEach(card => observer.observe(card));
+</script>
+</body>
+</html>

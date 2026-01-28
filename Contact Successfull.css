@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('images/jair-lazaro-0lrJo37r6Nk-unsplash.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: 1s ease;
+}
+body.loaded { opacity: 1; }
+
+/* ---------- HEADER ---------- */
+.main-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background:#0056b3;
+  padding:18px 0;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  color:#fff;
+  z-index: 999;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: 0.8s ease;
+}
+.main-header.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.header-box {
+  width: 92%;
+  max-width: 1200px;
+  margin: auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo { font-size:26px; font-weight:700; color:#fff; }
+
+.nav a {
+  color:white;
+  text-decoration:none;
+  padding:10px 16px;
+  border-radius:8px;
+  font-size:15px;
+  transition:0.3s;
+}
+.nav a:hover, .nav a.active { background:#fff; color:#0056b3; }
+.login-btn { background:#fff; color:#0056b3 !important; font-weight:600; }
+
+/* ---------- MAIN ---------- */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px; /* header height */
+}
+
+/* ---------- SUCCESS BOX ---------- */
+.success-box {
+  background: rgb(141, 250, 250);
+  backdrop-filter: blur(18px);
+  padding: 50px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  max-width: 500px;
+  opacity: 0;
+  transform: translateY(50px) scale(0.8);
+  animation: showBox 1s forwards;
+}
+
+@keyframes showBox {
+  0% { opacity: 0; transform: translateY(50px) scale(0.8); }
+  60% { opacity: 1; transform: translateY(-10px) scale(1.05); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.success-box h1 { font-size:32px; color:#003b84; margin-bottom:20px; }
+.success-box p { font-size:18px; color:#003b84; margin-bottom:30px; }
+.success-box a {
+  display:inline-block;
+  padding:14px 26px;
+  background:#0056b3;
+  color:white;
+  border-radius:10px;
+  text-decoration:none;
+  font-size:17px;
+  transition:0.3s;
+}
+.success-box a:hover { background:#003f87; transform: scale(1.05); }
+
+/* ---------- GREEN TICK ---------- */
+.tick-container {
+  width:80px;
+  height:80px;
+  margin:0 auto 25px auto;
+  border-radius:50%;
+  background:#4BB543;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  animation: scaleUp 0.6s ease forwards;
+}
+
+.tick {
+  width:30px;
+  height:15px;
+  border-left:4px solid white;
+  border-bottom:4px solid white;
+  transform: rotate(-45deg);
+  opacity: 0;
+  animation: drawTick 0.5s ease 0.6s forwards;
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+@keyframes drawTick {
+  from { width: 0; opacity: 0; }
+  to { width: 30px; opacity: 1; }
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background:#0056b3;
+  color:#fff;
+  padding:20px 0;
+  text-align:center;
+  font-size:14px;
+  box-shadow:0 -2px 6px rgba(0,0,0,0.15);
+  border-radius: 12px 12px 0 0;
+}

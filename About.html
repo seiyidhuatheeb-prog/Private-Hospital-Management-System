@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>About - Private Hospital Management System</title>
+<link rel="Stylesheet" href="About.css">
+</head>
+<body>
+  <!-- ---------- HEADER ---------- -->
+  <header class="main-header">
+    <div class="container header-box">
+      <div class="logo">PHMS</div>
+      <nav class="nav">
+        <a href="Index.html">Home</a>
+        <a href="About.html" class="active">About</a>
+        <a href="Services.html">Services</a>
+        <a href="Doctors.html">Doctors</a>
+        <a href="Appointments.html">Appointments</a>
+        <a href="Contact.html">Contact</a>
+        <a href="Login.html" class="login-btn">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ---------- HERO CARD ---------- -->
+    <div class="hero-card">
+      <h2>About Private Hospital</h2>
+      <p>Private Hospital is committed to delivering exceptional healthcare services with a strong emphasis on patient safety, accuracy, and efficiency. Our approach prioritizes a patient-first mindset, ensuring that treatment, communication, and record management remain clear and seamless. This project follows the structure of the provided layout and has been thoughtfully adapted to meet the standards of a modern hospital management system.</p>
+    </div>
+  </main>
+  <!-- ---------- FOOTER ---------- -->
+  <footer class="footer">
+    © Private Hospital Management System — Created By <strong>SMS.Atheeb Moulana</strong>
+  </footer>
+  <!-- ---------- JAVASCRIPT ---------- -->
+  <script>
+    // PAGE LOAD ANIMATION
+    window.onload = () => {
+      document.body.classList.add("loaded");
+      document.querySelector(".main-header").classList.add("show");
+      document.querySelector(".hero-card").classList.add("show");
+    };
+  </script>
+
+</body>
+</html>

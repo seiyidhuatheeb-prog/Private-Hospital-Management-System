@@ -1,0 +1,99 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Appointments - Private Hospital Management System</title>
+<link rel="Stylesheet" href="Appointments.css">
+</head>
+<body>
+<header class="main-header">
+  <div class="container header-box">
+    <div class="logo">PHMS</div>
+    <nav class="nav">
+      <a href="Index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Services.html">Services</a>
+      <a href="Doctors.html">Doctors</a>
+      <a href="Appointments.html" class="active">Appointments</a>
+      <a href="Contact.html">Contact</a>
+      <a href="Login.html" class="login-btn">Login</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <div class="appointment-container">
+    <h2>Book an Appointment</h2>
+    <div id="error-msg" class="error"></div>
+    <form action="Appointments Request Sent Page.html">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Patient Name</label>
+          <input type="text" id="name" placeholder="Full name" required>
+        </div>
+        <div class="form-group small">
+          <label>Phone</label>
+          <input type="text" id="phone" placeholder="+94..." required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Department</label>
+        <select id="department" required>
+          <option value="">Select</option>
+          <option>Cardiology</option>
+          <option>Pediatrics</option>
+          <option>General Surgery</option>
+          <option>Radiology</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Preferred Date & Time</label>
+        <input type="datetime-local" id="datetime" required>
+      </div>
+
+      <div class="form-group">
+        <label>Notes</label>
+        <textarea id="notes" rows="4" placeholder="Symptoms or notes"></textarea>
+      </div>
+
+      <button type="submit">Request Appointment</button>
+    </form>
+  </div>
+</main>
+
+<footer class="footer">© Private Hospital Management System — Created By <strong>SMS.Atheeb Moulana</strong></footer>
+
+<script>
+// Page load animation
+window.onload = () => {
+  document.body.classList.add("loaded");
+  document.querySelector(".main-header").classList.add("show");
+  document.querySelector(".appointment-container").classList.add("show");
+};
+
+// Form submission
+document.getElementById("appointmentForm").addEventListener("submit", function(e){
+  e.preventDefault(); // prevent default form submission
+
+  // Simple validation
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const department = document.getElementById("department").value;
+  const datetime = document.getElementById("datetime").value;
+
+  const errorDiv = document.getElementById("error-msg");
+  if(!name || !phone || !department || !datetime){
+    errorDiv.textContent = "Please fill all required fields!";
+    return;
+  }
+
+  // Redirect to success page
+  window.location.href = "AppointmentSuccess.html";
+});
+</script>
+</body>
+</html>

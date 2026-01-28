@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Services - Private Hospital Management System</title>
+<link rel="Stylesheet" href="Services.css">
+</head>
+<body>
+<header class="main-header">
+  <div class="container header-box">
+    <div class="logo">PHMS</div>
+    <nav class="nav">
+      <a href="Index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Services.html" class="active">Services</a>
+      <a href="Doctors.html">Doctors</a>
+      <a href="Appointments.html">Appointments</a>
+      <a href="Contact.html">Contact</a>
+      <a href="Login.html" class="login-btn">Login</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- HERO CARD -->
+  <div class="hero-card">
+    <h2>Our Medical Services</h2>
+    <p>We provide comprehensive healthcare services with highly trained medical staff and advanced equipment to meet all patient needs.</p>
+  </div>
+
+  <!-- SERVICES GRID -->
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>General Medicine</h3>
+      <p>Complete diagnosis & treatment for all common medical issues.</p>
+    </div>
+    <div class="service-card">
+      <h3>Pediatrics</h3>
+      <p>Dedicated care for infants, children & young teens.</p>
+    </div>
+    <div class="service-card">
+      <h3>Surgery</h3>
+      <p>Advanced surgical procedures with modern operating theatres.</p>
+    </div>
+    <div class="service-card">
+      <h3>Radiology & Labs</h3>
+      <p>Digital X-Ray, MRI, CT, ultrasound, blood tests & more.</p>
+    </div>
+    <div class="service-card">
+      <h3>Cardiology</h3>
+      <p>Heart care, ECG, echo, angiogram & cardiac monitoring.</p>
+    </div>
+  </div>
+</main>
+<footer class="footer">© Private Hospital Management System — Created By <strong>SMS.Atheeb Moulana</strong></footer>
+<script>
+  // PAGE LOAD ANIMATION
+  window.onload = () => {
+    document.body.classList.add("loaded");
+    document.querySelector(".main-header").classList.add("show");
+    document.querySelector(".hero-card").classList.add("show");
+  };
+
+  // SCROLL ANIMATION FOR SERVICE CARDS
+  const cards = document.querySelectorAll(".service-card");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.2 });
+  cards.forEach(card => observer.observe(card));
+</script>
+</body>
+</html>
